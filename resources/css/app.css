@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GLOBAL DARK THEME */
+body {
+    @apply bg-gray-900 text-gray-100;
+}
+/* Галерея: размер + плавные эффекты */
+/* Мини-анимация */
+.gallery-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.6);
+}
+/* ===============================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ
+   =============================== */
+
+@media (max-width: 768px) {
+
+    /* ————— НАВИГАЦИЯ ————— */
+    nav {
+        padding: 10px 15px;
+    }
+
+    nav .nav-links {
+        display: none;           /* прячем меню */
+        flex-direction: column;
+        background: rgb(0, 0, 0);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav .nav-links a {
+        padding: 10px 0;
+        font-size: 18px;
+    }
+
+    /* бургер-кнопка */
+    .burger {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        user-select: none;
+    }
+
+    /* ————— ГЛАВНЫЕ БЛОКИ ————— */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 15px;
+    }
+
+    .hero img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* ————— ГАЛЕРЕЯ ————— */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* ————— БЛОК ТРЕНЕРОВ ————— */
+    .trainer-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .trainer-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* ————— ТАБЛИЦЫ ПРАЙСА ————— */
+    .price-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+
+    .price-table table {
+        width: 700px; /* чтобы таблица не ломалась */
+    }
+
+    /* ————— ОТЗЫВЫ ————— */
+    .review {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    /* ————— FAQ ————— */
+    .faq-item {
+        padding: 15px;
+    }
+
+    /* ————— ФУТЕР ————— */
+    footer {
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+
+.burger {
+    width: 35px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    height: 4px;
+    background: yellow;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Мобильное меню — нормальная вертикальная колонка */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    background: rgba(0,0,0,0.85); /* Красивый тёмный фон */
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 9999;
+}
+
+/* Ссылки внутри */
+.mobile-menu a {
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 6px;
+}
+
+/* Крестик закрытия */
+.mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+/* Отступы секций от фиксированного меню на мобилке */
+.faq-section {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.reviews-section {
+    margin-top: 30px;
+    padding: 0 10px;
+}
+}
